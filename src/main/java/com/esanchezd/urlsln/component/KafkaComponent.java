@@ -10,6 +10,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -55,6 +56,7 @@ public class KafkaComponent {
 		
 	}
 
+	@Async
 	public void produce(String message) {
 		this.producer.send(new ProducerRecord<>(topic, message));
 	}

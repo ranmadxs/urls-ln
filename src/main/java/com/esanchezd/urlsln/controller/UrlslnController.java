@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.esanchezd.urlsln.component.KafkaComponent;
+import com.esanchezd.urlsln.dto.AnalyticEventDTO;
+import com.esanchezd.urlsln.dto.DeviceDetailDTO;
+import com.esanchezd.urlsln.dto.GeoIPDTO;
 import com.esanchezd.urlsln.service.UrlslnService;
+import com.google.gson.Gson;
 
 @RestController(value = "/")
 public class UrlslnController {
@@ -25,7 +28,6 @@ public class UrlslnController {
     
     @Autowired(required = true)
     private KafkaComponent kafkaComponent;
-
     
     @Value("${cloudkafka.topic}")
 	private String topic;
@@ -41,10 +43,11 @@ public class UrlslnController {
     
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public void method(@PathVariable("id") String id, HttpServletResponse httpServletResponse, HttpServletRequest request) throws Exception {
-		logger.info(request.getRemoteAddr());
+		logger.info(id);
+		AnalyticEventDTO analyticEvent = new AnalyticEventDTO(request.getRemoteAddr(), id, request.getHeader("user-agent"));
+		Gson gson = new Gson();
+		kafkaComponent.produce(gson.toJson(analyticEvent));
 		String url = urlslnService.getRedirectUrl(id);
-		kafkaComponent.produce("XDDD");
-		logger.debug(url);
 		httpServletResponse.sendRedirect(url);
 	}
 	

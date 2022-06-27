@@ -4,11 +4,16 @@ public class GeoIPDTO {
 	
     private String ipAddress;
     private String device;
-    private String city;
-    private String fullLocation;
-    private Double latitude;
-    private Double longitude;
+    private String country;
+    private String continent;
+        
     
+	public String getContinent() {
+		return continent;
+	}
+	public void setContinent(String continent) {
+		this.continent = continent;
+	}
 	public String getIpAddress() {
 		return ipAddress;
 	}
@@ -21,29 +26,11 @@ public class GeoIPDTO {
 	public void setDevice(String device) {
 		this.device = device;
 	}
-	public String getCity() {
-		return city;
+	public String getCountry() {
+		return country;
 	}
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getFullLocation() {
-		return fullLocation;
-	}
-	public void setFullLocation(String fullLocation) {
-		this.fullLocation = fullLocation;
-	}
-	public Double getLatitude() {
-		return latitude;
-	}
-	public void setLatitude(Double latitude) {
-		this.latitude = latitude;
-	}
-	public Double getLongitude() {
-		return longitude;
-	}
-	public void setLongitude(Double longitude) {
-		this.longitude = longitude;
+	public void setCountry(String country) {
+		this.country = country;
 	}
     
     
