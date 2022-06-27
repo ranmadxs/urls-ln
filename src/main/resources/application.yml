@@ -1,7 +1,7 @@
 spring.application.name: urlsln
 server.port: ${PORT:8080}
 
-springdoc.swagger-ui.path: /
+springdoc.swagger-ui.path: /doc
 
 spring:
   data:
