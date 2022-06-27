@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.esanchez</groupId>
 	<artifactId>urls-ln</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3</version>
 	<name>urls-ln</name>
 	<description>urls-ln</description>
 	<properties>
