@@ -13,10 +13,13 @@ java -jar target/urls-ln.jar
 ```
 ## Modo de uso
 Para ejecutar en la "nube" abrir un browser y tipear:
+```
 https://urls-ln.herokuapp.com/<id>
+```
 Por ejemplo: 
+```
 https://urls-ln.herokuapp.com/62b9539d070b6e000480f071
-
+```
 Documentación "viva":
 https://urls-ln.herokuapp.com/doc
 
