@@ -23,7 +23,8 @@ https://urls-ln.herokuapp.com/62b9539d070b6e000480f071
 Documentación "viva":
 https://urls-ln.herokuapp.com/doc
 
-
+### Para crear nuevas urlshortener o bien ver un listado de las que existan:
+https://github.com/ranmadxs/urls-base
 
 ## Heroku
 
