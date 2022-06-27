@@ -29,7 +29,7 @@ public class GeoLocationConfig {
 	public DatabaseReader databaseReader() {
 		try {
 
-			Resource resource = resourceLoader.getResource("classpath:maxmind/GeoLite2-City.mmdb");
+			Resource resource = resourceLoader.getResource("classpath:geo/GeoLite2-City.mmdb");
 			InputStream dbAsStream = resource.getInputStream();
 
 
